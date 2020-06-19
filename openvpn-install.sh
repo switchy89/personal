@@ -51,11 +51,11 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
 	do
 	clear
-		echo "OpenVPN MENU è già installato"
+		echo "OpenVPN è già installato"
 		echo ""
 		echo "Cosa vuoi fare?"
-		echo "   1) Aggiungi un nuovo utente"
-		echo "   2) Elimina un utente esistente"
+		echo "   1) Aggiungere un nuovo utente"
+		echo "   2) Eliminare un utente esistente"
 		echo "   3) Disinstallare OpenVPN"
 		echo "   4) Tornare al menù principale"
 		read -p "Seleziona un'opzione [1-4]: " option
