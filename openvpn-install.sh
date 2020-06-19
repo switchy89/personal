@@ -184,7 +184,7 @@ else
 	echo "Quale protocollo vuoi per le connessioni OpenVPN?"
 	echo "   1) UDP (Raccomandato)"
 	echo "   2) TCP (Velocità)"
-	read -p "Protocollo [1-2]: " -e -i 1 PROTOCOL
+	read -p "Protocollo [1-2]: " -e -i 2 PROTOCOL
 	case $PROTOCOL in
 		1) 
 		PROTOCOL=udp
@@ -209,7 +209,7 @@ else
 	echo "Si prega di utilizzare una sola parola, senza caratteri speciali"
 	read -p "Nome del client: " -e -i client CLIENT
 	echo
-	echo "Ok, era tutto ciò di cui avevo bisogno. Sono pronto per configurare il tuo server OpenVPN ora"
+	echo "Ok, era tutto ciò di cui avevo bisogno. Sono pronto per configurare il tuo server OpenVPN ora."
 	read -n1 -r -p "Premere un tasto qualsiasi per continuare ..."
 	if [[ "$OS" = 'debian' ]]; then
 		apt-get update
@@ -393,6 +393,5 @@ http-proxy-option CUSTOM-HEADER Host m.tim.it" > /etc/openvpn/client-common.txt
 	echo "Finito!"
 	echo
 	echo "Le impostazioni del tuo client sono disponibili in" ~/"$CLIENT.ovpn"
-	echo "Se vuoi aggiungere più clienti, torna al menù digitando il comando vpn!"
+	echo "Se vuoi aggiungere più clienti, torna al menù!"
 fi
-mv openvpn-install.sh vpn && mv vpn /usr/sbin
