@@ -1,14 +1,14 @@
 #!/bin/bash
 clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker 1.0" ; tput sgr0
-if [[ `grep -c "^#PH56" /etc/sysctl.conf` -eq 1 ]]
+if [[ `grep -c "^#L1nux" /etc/sysctl.conf` -eq 1 ]]
 then
 	echo ""
 	echo "Le impostazioni di rete di TCP Tweaker sono già state aggiunte al sistema!"
 	echo ""
 	read -p "Vuoi rimuovere le impostazioni di TCP Tweaker? [s/n]: " -e -i n resposta0
 	if [[ "$resposta0" = 's' ]]; then
-		grep -v "^#PH56
+		grep -v "^#L1nux
 net.ipv4.tcp_window_scaling = 1
 net.core.rmem_max = 16777216
 net.core.wmem_max = 16777216
@@ -36,7 +36,7 @@ else
 	echo ""
 	echo "Modifica delle seguenti impostazioni:"
 	echo " " >> /etc/sysctl.conf
-	echo "#PH56" >> /etc/sysctl.conf
+	echo "#L1nux" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_window_scaling = 1
 net.core.rmem_max = 16777216
 net.core.wmem_max = 16777216
