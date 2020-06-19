@@ -1,9 +1,4 @@
 #!/bin/bash
-#
-# https://github.com/Nyr/openvpn-install
-#
-# Copyright (c) 2013 Nyr. Released under the MIT License.
-
 
 # Detect Debian users running the script with "sh" instead of bash
 if readlink /proc/$$/exe | grep -q "dash"; then
@@ -398,5 +393,6 @@ http-proxy-option CUSTOM-HEADER Host m.tim.it" > /etc/openvpn/client-common.txt
 	echo "Finito!"
 	echo
 	echo "Le impostazioni del tuo client sono disponibili in" ~/"$CLIENT.ovpn"
-	echo "Se vuoi aggiungere più clienti, torna al menu!"
+	echo "Se vuoi aggiungere più clienti, torna al menù digitando il comando vpn!"
 fi
+mv openvpn-install.sh vpn && mv vpn /usr/sbin
