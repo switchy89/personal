@@ -15,7 +15,7 @@ else
 		sizemin=$(echo ${#username})
 		if [[ $sizemin -lt 2 ]]
 		then
-			echo "" ; echo "Hai inserito un nome utente troppo breve," ; echo "utilizar al menos dos caracteres!" ; echo "" ;
+			echo "" ; echo "Hai inserito un nome utente troppo breve," ; echo "utilizzare almeno due caratteri!" ; echo "" ;
 			exit 1
 		else
 			sizemax=$(echo ${#username})
