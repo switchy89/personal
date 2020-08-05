@@ -9,7 +9,7 @@ then
 else
 	if (echo $username | egrep [^a-zA-Z0-9.-_] &> /dev/null)
 	then
-		echo "" ; echo "Hai inserito un nome utente valido!" ; echo "utilizza solo lettere, numeri, punti e trattini." ; echo "Non utilizzare spazi, accenti o caratteri speciali!" ; echo ""	;	exit 1
+		echo "" ; echo "Hai inserito un nome utente invalido!" ; echo "utilizza solo lettere, numeri, punti e trattini." ; echo "Non utilizzare spazi, accenti o caratteri speciali!" ; echo ""	;	exit 1
 	else
 		sizemin=$(echo ${#username})
 		if [[ $sizemin -lt 2 ]]
