@@ -57,8 +57,8 @@ else
 										echo "" ; echo "devi inserire un numero di giorni maggiore di zero!" ; echo "" ;
 										exit 1
 									else
-										final=$(date "+%Y-%m-%d" -d "+$giorni giorni")
-										gui=$(date "+%d/%m/%Y" -d "+$giorni giorni")
+										final=$(date "+%Y-%m-%d" -d "+$giorni days")
+										gui=$(date "+%d/%m/%Y" -d "+$giorni days")
 										pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
 										useradd -e $final -M -s /bin/false -p $pass $username
 										[ $? -eq 0 ] && echo ""; echo "Utente $username creato" ; echo "Data di scadenza: $gui" ; echo "" || echo "Non è possibile creare l'utente!" ;
