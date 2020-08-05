@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "Creiamo un nuovo Utente!"
-echo ""
 read -p "nome: " username
 awk -F : ' { print $1 }' /etc/passwd > /tmp/users 
 if grep -Fxq "$username" /tmp/users
