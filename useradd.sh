@@ -38,7 +38,7 @@ else
 						sizepass=$(echo ${#password})
 						if [[ $sizepass -lt 6 ]]
 						then
-							echo "" ; echo "Hai inserito una password troppo breve!" ; echo "Per mantenere l'utente al sicuro inserisci almeno 6 caratteri" ; echo "con combinazione di lettere e numeri diversi!" ; echo "" ;
+							echo "" ; echo "Hai inserito una password troppo breve!" ; echo "Per mantenere l'utente al sicuro inserisci almeno 6 caratteri" ; echo "utilizza combinazioni di lettere e numeri diversi!" ; echo "" ;
 							exit 1
 						else	
 							read -p "Nr. Giorni alla scadenza: " giorni
