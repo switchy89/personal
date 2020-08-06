@@ -2,7 +2,7 @@
 clear
 tput bold ; printf '%35s%s%-20s\n' "Creiamo un nuovo Utente!" ; tput sgr0
 echo ""
-read -p tput bold ; "nome: " username ; tput sgr0
+tput bold ; read -p "nome: " username ; tput sgr0
 awk -F : ' { print $1 }' /etc/passwd > /tmp/users 
 if grep -Fxq "$username" /tmp/users
 then
@@ -31,7 +31,7 @@ else
 					tput bold ; echo "" ; echo "Hai inserito un nome utente vuoto!" ; tput sgr0 ; echo "" ;
 					exit 1
 				else	
-					read -p tput bold ; "password: " password ; tput sgr0
+					tput bold ; read -p "password: " password ; tput sgr0
 					if [[ -z $password ]]
 					then
 						tput bold ; echo "" ; echo "Hai inserito una password vuota!" ; tput sgr0 ; echo "" ;
@@ -43,7 +43,7 @@ else
 							tput bold ; echo "" ; echo "Hai inserito una password troppo breve!" ; echo "Per mantenere l'utente al sicuro inserisci almeno 6 caratteri" ; echo "utilizza combinazioni di lettere e numeri diversi!" ; tput sgr0 ; echo "" ;
 							exit 1
 						else	
-							read -p tput bold ; "Nr. Giorni alla scadenza: " giorni ; tput sgr0
+							tput bold ; read -p "Nr. Giorni alla scadenza: " giorni ; tput sgr0
 							if (echo $giorni | egrep '[^0-9]' &> /dev/null)
 							then
 								tput bold ; echo "" ; echo "Hai inserito un numero di giorni non valido!" ; tput sgr0 ; echo "" ;
