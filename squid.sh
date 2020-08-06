@@ -41,6 +41,6 @@ then
 	fi
 fi
 echo ""
-tput bold ; echo "Squid Proxy Installato e funzionante sulle porte: 80, 3128, 8080" ; tput sgr0
+tput bold ; echo "Squid Proxy Installato e funzionante sulle porte: 80, 3128, 8080." ; tput sgr0
 echo ""
 exit 1
