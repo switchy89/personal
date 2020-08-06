@@ -203,7 +203,7 @@ else
 	echo "   3) Google"
 	echo "   4) OpenDNS"
 	echo "   5) Verisign"
-	read -p "DNS [1-5]: " -e -i 1 DNS
+	read -p "DNS [1-5]: " -e -i 2 DNS
 	echo
 	echo "Infine, digita un nome per il certificato del client"
 	echo "Si prega di utilizzare una sola parola, senza caratteri speciali"
