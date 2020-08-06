@@ -1,11 +1,11 @@
 #!/bin/bash
 clear
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "SQUID PROXY" ; tput sgr0
+tput bold ; printf '%35s%s%-20s\n' "SQUID PROXY" ; tput sgr0
 IP=$(wget -qO- ipv4.icanhazip.com)
 read -p "Per continuare confermare l'IP di questo server: " -e -i $IP ipdovps
 if [ -z "$ipdovps" ]
 then
-	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "" ; echo " Non hai inserito l'IP di questo server. Riprova. " ; echo "" ; echo "" ; tput sgr0
+	tput bold ; echo "" ; echo "" ; echo " Non hai inserito l'IP di questo server. Riprova. " ; echo "" ; echo "" ; tput sgr0
 	exit 1
 fi
 echo ""
@@ -41,6 +41,6 @@ then
 	fi
 fi
 echo ""
-tput setaf 7 ; tput setab 4 ; tput bold ; echo "Squid Proxy Installato e funzionante sulle porte: 80, 3128, 8080" ; tput sgr0
+tput bold ; echo "Squid Proxy Installato e funzionante sulle porte: 80, 3128, 8080" ; tput sgr0
 echo ""
 exit 1
