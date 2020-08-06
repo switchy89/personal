@@ -1,13 +1,13 @@
 #!/bin/bash
 clear
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker 1.0" ; tput sgr0
+tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker 1.0" ; tput sgr0
 if [[ `grep -c "^#L1nux" /etc/sysctl.conf` -eq 1 ]]
 then
 	echo ""
 	echo "Le impostazioni di rete di TCP Tweaker sono già state aggiunte al sistema!"
 	echo ""
-	read -p "Vuoi rimuovere le impostazioni di TCP Tweaker? [s/n]: " -e -i n resposta0
-	if [[ "$resposta0" = 's' ]]; then
+	read -p "Vuoi rimuovere le impostazioni di TCP Tweaker? [s/n]: " -e -i n risposta0
+	if [[ "$risposta0" = 's' ]]; then
 		grep -v "^#L1nux
 net.ipv4.tcp_window_scaling = 1
 net.core.rmem_max = 16777216
@@ -31,10 +31,10 @@ else
 	echo "Questo script modificherà alcune impostazioni di rete"
 	echo "del sistema per ridurre la latenza e migliorare la velocità."
 	echo ""
-	read -p "Continuare con l'installazione? [s/n]: " -e -i n resposta
-	if [[ "$resposta" = 's' ]]; then
+	read -p "Continuare con l'installazione? [s/n]: " -e -i s risposta
+	if [[ "$risposta" = 's' ]]; then
 	echo ""
-	echo "Modifica delle seguenti impostazioni:"
+	tput bold ; echo "Modifica delle seguenti impostazioni:" ; tput sgr0
 	echo " " >> /etc/sysctl.conf
 	echo "#L1nux" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_window_scaling = 1
@@ -47,11 +47,11 @@ net.ipv4.tcp_slow_start_after_idle = 0" >> /etc/sysctl.conf
 echo ""
 sysctl -p /etc/sysctl.conf
 		echo ""
-		echo "Le impostazioni di rete di TCP Tweaker sono state aggiunte correttamente."
+		tput bold ; echo "Le impostazioni di rete di TCP Tweaker sono state aggiunte correttamente." ; tput sgr0
 		echo ""
 	else
 		echo ""
-		echo "L'installazione è stata annullata dall'utente!"
+		tput bold ; echo "L'installazione è stata annullata dall'utente!" ; tput sgr0
 		echo ""
 	fi
 fi
