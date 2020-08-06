@@ -2,7 +2,7 @@
 clear
 tput bold ; printf '%35s%s%-20s\n' "Creiamo un nuovo Utente!" ; tput sgr0
 echo ""
-tput bold ; read -p "nome: " username ; tput sgr0
+tput bold ; read -p "nome: " tput sgr0 username
 awk -F : ' { print $1 }' /etc/passwd > /tmp/users 
 if grep -Fxq "$username" /tmp/users
 then
