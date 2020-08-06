@@ -2,7 +2,7 @@
 clear
 tput bold ; printf '%35s%s%-20s\n' "Creiamo un nuovo Utente!" ; tput sgr0
 echo ""
-tput bold ; read -p "nome: " tput sgr0 username
+tput bold ; read -p "nome: " ; tput sgr0 ; username
 awk -F : ' { print $1 }' /etc/passwd > /tmp/users 
 if grep -Fxq "$username" /tmp/users
 then
@@ -11,13 +11,13 @@ then
 else
 	if (echo $username | egrep [^a-zA-Z0-9.-_] &> /dev/null)
 	then
-		tput bold ; echo "" ; echo "Hai inserito un nome utente invalido!" ; echo "utilizza solo lettere, numeri, punti e trattini." ; echo "Non utilizzare spazi, accenti o caratteri speciali!" ; echo ""	; tput sgr0
+		tput bold ; echo "" ; echo "Hai inserito un nome utente invalido!" ; echo "utilizza solo lettere, numeri, punti e trattini." ; echo "Non utilizzare spazi, accenti o caratteri speciali!" ; tput sgr0 ; echo ""
 		exit 1
 	else
 		sizemin=$(echo ${#username})
 		if [[ $sizemin -lt 2 ]]
 		then
-			tput bold ; echo "" ; echo "Hai inserito un nome utente troppo breve," ; echo "utilizzare almeno due caratteri!" ; ; tput sgr0 ; echo "" ;
+			tput bold ; echo "" ; echo "Hai inserito un nome utente troppo breve," ; echo "utilizzare almeno due caratteri!" ; tput sgr0 ; echo "" ;
 			exit 1
 		else
 			sizemax=$(echo ${#username})
