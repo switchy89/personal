@@ -385,13 +385,13 @@ comp-lzo
 setenv opt block-outside-dns
 key-direction 1
 verb 3
-http-proxy-option CUSTOM-HEADER X-Online-Host m.tim.it
-http-proxy-option CUSTOM-HEADER Host m.tim.it" > /etc/openvpn/client-common.txt
+http-proxy-option CUSTOM-HEADER X-Online-Host cubomusica.ticdn.it
+http-proxy-option CUSTOM-HEADER Host cubomusica.ticdn.it" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo
 	echo "Finito!"
 	echo
 	echo "Le impostazioni del tuo client sono disponibili in" ~/"$CLIENT.ovpn"
-	echo "Se vuoi aggiungere più clienti, torna al menù!"
+	echo "Se vuoi aggiungere più clienti, esegui nuovamente lo script!"
 fi
