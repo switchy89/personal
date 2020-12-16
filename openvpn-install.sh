@@ -374,6 +374,7 @@ sndbuf 0
 rcvbuf 0
 remote $IP $PORT
 http-proxy $IP 8080
+http-proxy-retry
 resolv-retry infinite
 nobind
 persist-key
